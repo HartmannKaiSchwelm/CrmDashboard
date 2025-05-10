@@ -1,0 +1,21 @@
+﻿@using CrmDashboard.Models
+
+@page "/"
+
+<PageTitle>CRM Dashboard</PageTitle>
+
+<h3>Customer List</h3>
+@foreach ( var customer in customers)
+{
+    <p>@customer.Name - @customer.Company - @customer.Status - @customer.Revenue $</p>
+}
+
+
+
+@code {
+    private List<Customer> customers = new List<Customer>
+    {
+        new Customer { Id = 1, Name = "Anna Müller", Company ="TechCorp", Status = "Active", Revenue = 50000 },
+        new Customer { Id = 2, Name = "Ben Schmidt", Company = "DentiLab", Status = "Inactive", Revenue = 20000 }
+    };
+}
